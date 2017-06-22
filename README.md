@@ -30,17 +30,17 @@ The uw_teleop folder should go in:
 
 ```~/catkin_ws/src```
 
-It is a full ROS package. It assumes that the ROS package joy (```http://wiki.ros.org/joy```) is running a joy_node, and a Logitech X3D joystick is connected on ubs/js0. The 3 programs in the /scripts folder can be run with python to control the ROV and arms with the joystick. It also contains the experimental physics script for controlling the ROV with thrusters. 
+It is a full ROS package. It assumes that the ROS package joy (```http://wiki.ros.org/joy```) is running a joy_node, and a Logitech X3D joystick is connected on ubs/js0. The 3 programs in the /scripts folder can be run with python to control the ROV and arms with the joystick. It also contains the experimental physics script for controlling the ROV with thrusters (and requires the not included physics file). 
 
 _________________________________________________________________________________
 
 Once the files have been put in the appropriate locations, you will have to go through the file pipeFollowing_turnsNEXXUS.xml and change all of the file paths to reflect where the respective files are in your computer. In general you will just need to change /home/burobotics to whatever your computer is. 
 
-To run the program, catkin_make_isolated the /catkin_ws and source the devel_isolated/setup.bash file. 
+To run the program, catkin_make_isolated the /catkin_ws and then source the devel_isolated/setup.bash file. 
 
 The code to run the uwsim is 
 ```roscore```
-*New Window*
+*New Terminal Window*
 ```rosrun uwsim uwsim --configfile pipeFollowing_turnsNEXXUS.xml```
 
 You will also need to run the joy_node package and the uw_teleop python scripts to move things around. 
